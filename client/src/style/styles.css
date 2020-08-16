@@ -1,0 +1,251 @@
+
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Cardo', serif;
+  background-color: #f7f6f2;
+  width: 100%;
+  height: 100%;
+  color: black;
+  overflow: auto;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.heading-container {
+  width: 100%;
+  padding: 0 5px;
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+  background-color: inherit;
+  z-index: 5;
+  position: fixed;
+  overflow: hidden;
+}
+
+.heading-container p {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* content */
+.content-container {
+  width: 100%;
+  padding: 36px 0 0 0;
+  height: 100%;
+  overflow: scroll;
+}
+
+/* movie titles */
+.block-left {
+  padding: 10px 10px 20px 30px;
+  text-align: right;
+  height: inherit;
+  border-right: 1px solid black;
+  overflow: scroll;
+  float: left;
+  letter-spacing: 1px;
+}
+
+video {
+  align-self: center;
+  z-index: 2;
+  height: 95%;
+  min-width: 95%;
+  filter: saturate(70%);
+  filter: contrast(80%);
+  display: none;
+  position: absolute;
+  padding: 0;
+  margin: auto;
+}
+
+.title-link {
+  word-wrap: break-word;
+  color: black;
+  font-size: 2.5rem;
+}
+
+.title-link:hover {
+  color: #5ab3e6;
+  text-decoration: none;
+}
+
+.info {
+  padding-top: 5px;
+  font-size: 20px;
+  text-align: right;
+  display: block;
+}
+
+.info-line {
+  display: block;
+  text-align: right;
+}
+
+/* screen */
+.block-middle {
+  text-align: left;
+  height: auto;
+  padding: 0;
+  border-right: 1px solid black;
+  background-color: inherit;
+  overflow: auto;
+  float: left;
+}
+
+/* footer */
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid black;
+  background-color: #f7f6f2;
+  z-index: 10;
+  padding: 10px 0;
+  letter-spacing: 1px;
+}
+
+.newsletter {
+  padding: 5px;
+  float: left;
+  width: 50%;
+}
+
+
+
+.contact {
+  float: left;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+
+}
+.newsletter-signin {
+  position: relative;
+  border-bottom: 1px solid black;
+  margin: 10px 0;
+  display: inline-block;
+
+}
+
+
+.button {
+  padding: 0;
+  color: inherit;
+  border: none;
+  background-color: inherit;
+}
+.button:hover {
+  color: black;
+  text-decoration: none;
+}
+.button:active {
+  border: none;
+}
+
+
+.like-button {
+  padding: 0;
+  color: inherit;
+  border: none;
+  background-color: inherit;
+}
+
+/* sign in button */
+
+
+/* parallax effect test */
+#scene {
+  position: absolute;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  width: 42.5vw;
+  height: 23.9vw;
+  z-index: -2;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 10% 0 10% 10%;
+}
+
+.inner-border {
+  position: absolute;
+  width: 42.5vw;
+  margin: 5%;
+  border: 1px solid black;
+  height: 23.9vw;
+  padding: 5% 0 0 5%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.image1 {
+  width: 12vmax;
+  height: 12vmax;
+  margin-left: 55%;
+  margin-top: 15%;
+  transform: translate(80%, 40%);
+  filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.1));
+}
+
+.image2 {
+  width: 8vmax;
+  height: 8vmax;
+  margin-left: 30%;
+  margin-top: 8%;
+  transform: translate(-150%, -50%) rotate(-45deg);
+  filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.1));
+}
+
+.image3 {
+  width: 10vmax;
+  height: 10vmax;
+  margin-left: 10%;
+  margin-top: 12%;
+  transform: translate(-150%, -50%) rotate(-45deg);
+  filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.1));
+}
+
+/* quote */
+
+.block-right {
+  float: left;
+  overflow: auto;
+  height: auto;
+  height: 80vh;
+  margin-bottom: auto;
+  letter-spacing: 4px;
+}
+
+.quote {
+  position: relative;
+  padding: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 100%;
+  float: right;
+  overflow: hidden;
+}
+
+
+
+
+
+/* add new movie page */
+
+.add-movie {
+  padding: 20px;
+}
