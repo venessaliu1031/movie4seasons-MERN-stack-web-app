@@ -11,7 +11,7 @@ class Left extends React.Component {
     super(props);
     this.increase = this.increase.bind(this);
     this.playVideo = this.playVideo.bind(this);
-    this.pauseVideo = this.pauseVideo.bind(this);
+    // this.pauseVideo = this.pauseVideo.bind(this);
     this.state = {
       count: 0,
       movies: [],
@@ -37,18 +37,32 @@ class Left extends React.Component {
 
   playVideo(id) {
     const currVideo = document.getElementById("video-"+id);
+    document.querySelectorAll("video").forEach(function(video){
+      video.pause();
+      video.style.display = "none";
+    })
 
     currVideo.style.display = "inline-block";
     currVideo.play();
+    // this.fade(currVideo);
   }
 
-  pauseVideo(id) {
-    const currVideo = document.getElementById("video-"+id);
+  // pauseVideo(id) {
+  //   const currVideo = document.getElementById("video-"+id);
+  //
+  //   currVideo.style.display = "none";
+  //   currVideo.pause();
+  // }
 
-    currVideo.style.display = "none";
-    currVideo.pause();
-  }
-
+  // fade(element) {
+  //   var op = 0;
+  //   var timer = setInterval(function () {
+  //     if (op >= 1) clearInterval(timer);
+  //     element.style.opacity = op;
+  //     element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+  //     op += op * 0.1 || 0.1;
+  //   }, 50);
+  // }
 
 
 
@@ -66,7 +80,7 @@ class Left extends React.Component {
             <Accordion.Toggle
 
               onMouseOver={() => this.playVideo(movie._id)}
-              onMouseOut={() => this.pauseVideo(movie._id)}
+              // onMouseOut={() => this.pauseVideo(movie._id)}
               bsPrefix="title-link" as={Button} variant="link" eventKey="1">
               {movie.name}
             </Accordion.Toggle>
@@ -90,7 +104,7 @@ class Left extends React.Component {
     }.bind(this))
 
     return (
-    <div className="col-lg-4 col-md-6 block-left">
+    <div className="col-12 col-md-4 col-sm-6 block-left">
     {movieSection}
 
 

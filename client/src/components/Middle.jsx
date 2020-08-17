@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer"
+
 import api from "../api"
 
 
@@ -10,6 +10,7 @@ class Middle extends React.Component {
     this.state = {
       movies: [],
     }
+    this.endVideo = this.endVideo.bind(this)
   }
 
   componentDidMount = async () => {
@@ -18,6 +19,10 @@ class Middle extends React.Component {
         movies: movies.data.data,
       })
     })
+  }
+
+  endVideo(id){
+    document.getElementById("video-"+id).style.display = "none";
   }
 
   render() {
@@ -30,33 +35,36 @@ class Middle extends React.Component {
       return (
 
           <div className="video" key={index}>
-            <video src={path} muted loop id={"video-"+movie._id}></video>
+            <video src={path} muted id={"video-"+movie._id}
+            onEnded={() => this.endVideo(movie._id)}></video>
           </div>
 
       )
-    })
+    }.bind(this))
 
 
 
     return (
-    <div className="col-md-6 block-middle">
+      <div className="col-9 block-middle">
         <div className="inner-border">
         {screenSection}
         </div>
 
 
       <div id="scene">
-        <img className="image1" data-depth="0.9" src="https://raw.githubusercontent.com/maxym11/fancy-carousel-assets/master/SPHEER%20PNK.png" alt=""></img>
-        <img className="image2" data-depth="0.7" src="https://raw.githubusercontent.com/maxym11/fancy-carousel-assets/master/SPHEER%20PNK.png" alt=""></img>
-        <img className="image3" data-depth="0.5" src="https://raw.githubusercontent.com/maxym11/fancy-carousel-assets/master/CUUB%20PNK.png" alt=""></img>
+        <img className="image1" data-depth="0.9" src="images/green.png" alt=""></img>
+        <img className="image2" data-depth="0.7" src="images/fish-can.png" alt=""></img>
+        <img className="image3" data-depth="0.5" src="images/bird.png" alt=""></img>
 
       </div>
-      <Footer />
 
 
-    </div>
+
+      </div>
   )}
 
 }
+
+// https://raw.githubusercontent.com/maxym11/fancy-carousel-assets/master/CUUB%20PNK.png
 
 export default Middle;

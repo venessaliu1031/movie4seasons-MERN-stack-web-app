@@ -2,6 +2,7 @@ import React from "react";
 import Left from "./Left";
 import Middle from "./Middle";
 import Right from "./Right";
+import Footer from "./Footer"
 import api from "../api";
 // import Middle from "./Middle";
 // import Right from "/Right";
@@ -13,11 +14,18 @@ function Content(){
 
   return (
     <div className="row content-container">
-    <Left/>
-    <Middle />
-    <Right />
-
+      <Left/>
+      <div className="col-md-8 col-sm-6 block-upper-right">
+        <div className="row">
+          <Middle />
+          <Right />
+        </div>
+        <div className="row">
+          <Footer />
+        </div>
+      </div>
     </div>
+
   )
 };
 

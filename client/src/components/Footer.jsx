@@ -13,7 +13,7 @@ function Footer() {
   }
 
   return (
-    <div className="footer">
+    <div className="col-12 footer">
       <div className="col-sm-3 newsletter">
         <p>newsletter</p>
         <div id="signin-form" className="newsletter-signin">
@@ -24,7 +24,7 @@ function Footer() {
 
       </div>
       <div className="col-sm-9 contact">
-        <p>creater by Venessa Liu</p>
+        <p>created by Venessa Liu</p>
         <a href="mailto:venessa7599@gmail.com">venessa7599@gmail.com</a>
         <p>more works @ <a href="http://www.venessaliu.com">www.venessaliu.com</a></p>
       </div>
