@@ -53,7 +53,12 @@ class Header extends React.Component {
       <p>{this.state.season} movie list</p>
       </div>
 
+      <div className="curr-time">
+
       <p>{this.state.time}</p>
+      </div>
+      <p></p>
+
 
     </div>
 )}

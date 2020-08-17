@@ -104,7 +104,7 @@ class Left extends React.Component {
     }.bind(this))
 
     return (
-    <div className="col-12 col-md-4 col-sm-6 block-left">
+    <div className="col col-12 col-md-4 col-sm-6 block-left">
     {movieSection}
 
 

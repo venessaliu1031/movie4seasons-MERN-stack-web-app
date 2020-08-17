@@ -52,6 +52,11 @@ p {
   padding-left: 10%;
 }
 
+.curr-time {
+  position: absolute;
+  right: 0;
+}
+
 
 /* content */
 .content-container {
@@ -59,7 +64,7 @@ p {
   margin: 0;
   padding: 36px 0 0 0;
   height: 100%;
-  overflow: scroll;
+  overflow: hidden;
   position: relative;
 }
 
@@ -114,24 +119,96 @@ a:hover {
 .info {
   padding-top: 5px;
   font-size: 20px;
-  text-align: right;
+  text-align: inherit;
   display: block;
 }
 
-.info-line {
-  display: block;
-  text-align: right;
-}
+
 
 /* screen */
+.col {
+  padding: 0;
+}
+
 .block-middle {
   text-align: left;
-  height: auto;
+  height: 100%;
+  width: 100%;
   padding: 0;
   border-right: 1px solid black;
   background-color: inherit;
-  overflow: auto;
+  overflow: hidden;
   float: left;
+}
+
+
+/* parallax effect test */
+#scene {
+  position: absolute;
+  width: 42.5vw;
+  height: 23.9vw;
+  z-index: -2;
+  border: 1px solid black;
+  margin: 10% 0 0 10%;
+  padding-bottom: 5%;
+  padding-right: 5%;
+}
+
+.inner-border {
+  align-items: center;
+  position: absolute;
+  width: 42.5vw;
+  margin: 5%;
+  border: 1px solid black;
+  height: 23.9vw;
+  padding: 5% 0 0 5%;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.image1 {
+  width: 23vmax;
+  height: 23vmax;
+  margin-left: 10%;
+  margin-top: 3%;
+  transform: translate(80%, 40%);
+  filter: drop-shadow(5px 5px 16px rgba(0, 0, 0, 0.3));
+}
+
+.image2 {
+  width: 5vmax;
+  height: 5vmax;
+  margin-left: 20%;
+  margin-top: 18%;
+  transform: translate(-150%, -50%) rotate(-45deg);
+  filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.1));
+}
+
+.image3 {
+  width: 10vmax;
+  height: 10vmax;
+  margin-left: 60%;
+  margin-top: 2%;
+  transform: translate(-150%, -50%) rotate(-45deg);
+  filter: drop-shadow(5px 5px 16px rgba(0, 0, 0, 0.3));
+}
+
+
+video {
+  position: absolute;
+  align-self: center;
+  z-index: 2;
+  max-height: 100%;
+  width: auto;
+  filter: saturate(80%);
+  filter: contrast(80%);
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
 }
 
 /* footer */
@@ -200,89 +277,20 @@ input {
 /* sign in button */
 
 
-/* parallax effect test */
-#scene {
-  position: absolute;
-  width: 42.5vw;
-  height: 23.9vw;
-  z-index: -2;
-  border: 1px solid black;
-  margin: 10% 0 0 10%;
-  padding-bottom: 5%;
-  padding-right: 5%;
-}
-
-.inner-border {
-  align-items: center;
-  position: absolute;
-  width: 42.5vw;
-  margin: 5%;
-  border: 1px solid black;
-  height: 23.9vw;
-  padding: 5% 0 0 5%;
-  z-index: 1;
-  overflow: hidden;
-  box-sizing: border-box;
-  display: inline-block;
-}
-
-.image1 {
-  width: 23vmax;
-  height: 23vmax;
-  margin-left: 10%;
-  margin-top: 3%;
-  transform: translate(80%, 40%);
-  filter: drop-shadow(5px 5px 16px rgba(0, 0, 0, 0.3));
-}
-
-.image2 {
-  width: 5vmax;
-  height: 5vmax;
-  margin-left: 20%;
-  margin-top: 18%;
-  transform: translate(-150%, -50%) rotate(-45deg);
-  filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.1));
-}
-
-.image3 {
-  width: 10vmax;
-  height: 10vmax;
-  margin-left: 60%;
-  margin-top: 2%;
-  transform: translate(-150%, -50%) rotate(-45deg);
-  filter: drop-shadow(5px 5px 16px rgba(0, 0, 0, 0.3));
-}
-
-
-
-
-
-video {
-  position: absolute;
-  align-self: center;
-  z-index: 2;
-  max-height: 100%;
-  width: auto;
-  filter: saturate(80%);
-  filter: contrast(80%);
-  display: none;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-
-}
 
 
 
 /* quote */
 
 .block-right {
-  float: left;
-  overflow: auto;
+  float: right;
+  overflow: hidden;
   height: auto;
-  height: 80vh;
+  width: inherit;
   margin-bottom: auto;
   letter-spacing: 4px;
+  z-index: -2;
+
 }
 
 .quote {
@@ -293,6 +301,7 @@ video {
   height: 100%;
   float: right;
   overflow: hidden;
+  z-index: inherit;
 }
 
 
@@ -303,4 +312,39 @@ video {
 
 .add-movie {
   padding: 20px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .curr-time {
+      display: none;
+    }
+    .title {
+      padding: 0;
+    }
+    .heading-container {
+      display: flex;
+    }
+    .block-right {
+      margin-top: 70%;
+      border-right: none;
+      border-top: 1px solid black;
+    }
+    .qoute {
+      height: 300px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .block-middle {
+      display: none;
+    }
+    .block-left {
+      text-align: center;
+      height: 72.5%;
+    }
+    .info {
+      text-align: center;
+    }
 }
