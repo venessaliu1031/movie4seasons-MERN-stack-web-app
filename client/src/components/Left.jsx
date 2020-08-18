@@ -71,7 +71,9 @@ class Left extends React.Component {
     const movies = this.state.movies
     console.log('TCL: MoviesList -> render -> movies', movies)
 
+
     var movieSection = movies.map(function(movie, index){
+      let imagePath = "images/" + index + ".png";
       return (
         <Accordion key={index}>
 
@@ -87,9 +89,9 @@ class Left extends React.Component {
           </Card.Header>
           <Accordion.Collapse bsPrefix="info" eventKey="1">
             <Card.Body bsPrefix="info-line">
+            <img class="movie-image" src={imagePath} alt=""></img>
+            <p>{movie.releaseDate} | {movie.genre}</p>
             <p>director | {movie.director}</p>
-
-            <p>release date | {movie.releaseDate}</p>
             <p>plot | {movie.plot}</p>
             <p>review | {movie.reviews}</p>
             <label id={"like-count-"+movie._id}> {movie.likeCount} </label>
@@ -104,7 +106,7 @@ class Left extends React.Component {
     }.bind(this))
 
     return (
-    <div className="col col-12 col-md-4 col-sm-6 block-left">
+    <div className="col col-12 col-lg-4 col-sm-6 block-left">
     {movieSection}
 
 

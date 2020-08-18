@@ -13,24 +13,23 @@ function Footer() {
   }
 
   return (
-    <div className="col-12 footer">
-      <div className="col-sm-3 newsletter">
+    <div className="row footer">
+      <div className="col-6 col-md-4 col-sm-12 newsletter">
         <p>newsletter</p>
-        <div id="signin-form" className="newsletter-signin">
+        <div id="signin-form" className="newsletter-signin flexbox">
           <input id="email-input" type="email" name="email" placeholder="email"></input>
-          <button className="button" onClick={signin}><span>→</span></button>
+          <button className="button" onClick={signin}>→</button>
         </div>
-
-
       </div>
-      <div className="col-sm-9 contact">
+
+      <div className="col-12 col-md-8 col-sm-12 contact">
         <p>created by Venessa Liu</p>
         <a href="mailto:venessa7599@gmail.com">venessa7599@gmail.com</a>
         <p>more works @ <a href="http://www.venessaliu.com">www.venessaliu.com</a></p>
       </div>
-
-
     </div>
+
+
   )
 }
 

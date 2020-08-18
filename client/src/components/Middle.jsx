@@ -45,8 +45,8 @@ class Middle extends React.Component {
 
 
     return (
-      <div className="col col-md-9">
-      <div className="block-middle">
+      <div className="col col-lg-9 block-middle">
+      <div className="">
         <div className="inner-border">
         {screenSection}
         </div>
