@@ -158,15 +158,6 @@ getMovieById = async (req, res) => {
 getMovies = async (req, res) => {
   const body = req.body
 
-  Movie.update({},{
-    $set: {
-      season: "summer",
-      verification: true,
-      genre: "undefined"
-    }
-  }, false, true);
-
-
   await Movie.find(body, (err, movies) => {
     if (err) {
       return res.status(400).json({
