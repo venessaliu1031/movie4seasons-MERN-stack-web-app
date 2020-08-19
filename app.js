@@ -8,6 +8,8 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 const db = require("./db");
+
+
 const movieRouter = require('./routes/movie-router');
 
 const app = express();

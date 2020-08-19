@@ -45,10 +45,17 @@ updateMovie = async (req, res) => {
       error: 'You must provide a body to update',
     })
   }
+  Movie.update({_id: req.params.id},
+    { $set: {season: "summer"}}, function(err){
+      if (err){
+        console.log(err);
+      }
+    }
+  )
 
   Movie.findOneAndUpdate({
     _id: req.params.id
-  }, req.body, (err, movie) => {
+  }, body, (err, movie) => {
     if (err) {
       return res.status(404).json({
         err,
@@ -149,7 +156,18 @@ getMovieById = async (req, res) => {
 };
 
 getMovies = async (req, res) => {
-  await Movie.find({}, (err, movies) => {
+  const body = req.body
+
+  Movie.update({},{
+    $set: {
+      season: "summer",
+      verification: true,
+      genre: "undefined"
+    }
+  }, false, true);
+
+
+  await Movie.find(body, (err, movies) => {
     if (err) {
       return res.status(400).json({
         success: false,
@@ -171,10 +189,14 @@ getMovies = async (req, res) => {
   }).catch(err => console.log(err))
 };
 
+
+
+
+
 module.exports = {
   createMovie,
   updateMovie,
   deleteMovie,
   getMovies,
-  getMovieById,
+  getMovieById
 };

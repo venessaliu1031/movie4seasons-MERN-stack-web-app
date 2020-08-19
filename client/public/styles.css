@@ -82,12 +82,13 @@ p {
 .movie-image {
   max-width: 90%;
   height: auto;
-  
+
   padding-bottom: 10px;
 }
 
 .block-middle-right {
   height: inherit;
+  overflow-y: scroll;
 }
 
 a {
@@ -137,6 +138,29 @@ a:hover {
   padding: 5px;
 }
 
+.recommend-btn {
+  word-wrap: break-word;
+  font-size: 2.5rem;
+  color: #5ab3e6;
+  text-decoration: none;
+  background-color: inherit;
+  border: none;
+}
+
+.recommend-btn:hover {
+  color: #5ab3e6;
+  text-decoration: none;
+}
+
+
+
+.recommend-btn:focus {
+  outline: none;
+}
+
+.recommend-form {
+  padding: 0 10px;
+}
 
 
 /* screen */
@@ -145,7 +169,8 @@ a:hover {
 }
 
 .block-upper-right {
-  height: 100%;
+  height: calc(100vh - 129px);
+  overflow-y: auto;
 }
 
 
@@ -156,7 +181,8 @@ a:hover {
   padding: 0;
   border-right: 1px solid black;
   background-color: inherit;
-  overflow: hidden;
+  overflow: scroll;
+  float: left;
 
 }
 
@@ -295,6 +321,7 @@ input {
   color: inherit;
   border: none;
   background-color: inherit;
+  font-size: 1.2rem;
 }
 .like-button:focus {
   outline: none;
@@ -310,7 +337,7 @@ input {
 
 .block-right {
   float: right;
-  overflow: hidden;
+  overflow: auto;
   height: inherit;
   width: inherit;
   margin-bottom: auto;
@@ -324,7 +351,7 @@ input {
   padding: 10px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  height: 95%;
+  height: 100%;
   float: right;
   overflow: hidden;
   z-index: inherit;
@@ -343,7 +370,7 @@ input {
 
 
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
     .curr-time {
       display: none;
     }
@@ -361,25 +388,24 @@ input {
     .block-middle {
       position: relative;
       height: 35vw;
+      overflow-y: scroll;
     }
     .block-left {
       text-align: center;
-    }
-    .qoute {
-      height: 50%;
     }
 
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 575px) {
 
-  .block-upper-right {
-    display: none;
+
+  .block-middle-right {
+    height: auto;
   }
 
     .block-left {
       text-align: center;
-      padding-bottom: 40%;
+      height: calc(100vh - 200px);
       border-right: none;
     }
     .info {

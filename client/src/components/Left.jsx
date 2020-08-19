@@ -2,6 +2,7 @@ import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
+import RecommendForm from "./RecommendForm";
 import api from "../api"
 
 
@@ -15,14 +16,41 @@ class Left extends React.Component {
     this.state = {
       count: 0,
       movies: [],
+      season: ""
     }
   }
 
   componentDidMount = async () => {
+    let currMonth = new Date().getMonth();
+    console.log("current month is " + currMonth);
+    let currSeason = ""
+    switch (true) {
+    case (currMonth <= 3):
+      currSeason = "winter";
+      break;
+    case (currMonth > 3 && currMonth <= 6):
+      currSeason = "spring";
+      break;
+    case (currMonth > 6 && currMonth <= 9):
+      currSeason = "summer";
 
+      break;
+    case (currMonth > 9):
+      currSeason = "fall";
 
+      break;
+    default:
+      currSeason = "all time"
 
-    await api.getAllMovies().then(movies => {
+    }
+    this.setState({
+      season: currSeason
+    });
+
+    await api.getAllMovies({
+      verification: true,
+      season: this.state.season
+    }).then(movies => {
       this.setState({
         movies: movies.data.data,
       })
@@ -32,6 +60,7 @@ class Left extends React.Component {
   increase(id) {
     console.log(id);
     document.getElementById("like-count-"+id).textContent++;
+    document.getElementById("like-button-"+id).style.color = "#5ab3e6";
     api.updateMovieById(id, {likeCount: document.getElementById("like-count-"+id).textContent});
   }
 
@@ -89,13 +118,13 @@ class Left extends React.Component {
           </Card.Header>
           <Accordion.Collapse bsPrefix="info" eventKey="1">
             <Card.Body bsPrefix="info-line">
-            <img class="movie-image" src={imagePath} alt=""></img>
+            <img className="movie-image" src={imagePath} alt=""></img>
             <p>{movie.releaseDate} | {movie.genre}</p>
             <p>director | {movie.director}</p>
             <p>plot | {movie.plot}</p>
             <p>review | {movie.reviews}</p>
             <label id={"like-count-"+movie._id}> {movie.likeCount} </label>
-            <button
+            <button id={"like-button-"+movie._id}
               className="like-button"
               onClick={() => this.increase(movie._id)}>♥︎</button>
             </Card.Body>
@@ -108,6 +137,7 @@ class Left extends React.Component {
     return (
     <div className="col col-12 col-lg-4 col-sm-6 block-left">
     {movieSection}
+    <RecommendForm />
 
 
     </div>
