@@ -47,7 +47,7 @@ class Left extends React.Component {
       season: currSeason
     });
 
-    await api.getAllMovies("summer").then(movies => {
+    await api.getAllMovies(currSeason).then(movies => {
       this.setState({
         movies: movies.data.data,
       })
