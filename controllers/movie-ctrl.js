@@ -157,6 +157,7 @@ getMovieById = async (req, res) => {
 
 getMovies = async (req, res) => {
   const body = req.body
+  console.log(body);
 
   await Movie.find(body, (err, movies) => {
     if (err) {
