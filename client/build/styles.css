@@ -89,7 +89,7 @@ p {
 
 .block-middle-right {
   height: inherit;
-  overflow-y: hidden;
+  overflow-y: scroll;
   padding: 0;
   display: flex;
   flex-flow: column;
@@ -126,6 +126,29 @@ a:hover {
 
 
 .title-link:focus {
+  outline: none;
+}
+
+.recommend-link {
+  word-wrap: break-word;
+  font-size: 2.5rem;
+  color: black;
+  text-decoration: none;
+  background-color: inherit;
+  border: none;
+  text-decoration: black dotted underline;
+
+}
+
+.recommend-link:hover {
+  color: #5ab3e6;
+  text-decoration: #5ab3e6 dotted underline;
+
+}
+
+
+
+.recommend-link:focus {
   outline: none;
 }
 

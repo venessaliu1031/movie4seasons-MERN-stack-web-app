@@ -18,14 +18,7 @@ class RecommendForm extends React.Component {
     this.updateInputSeason = this.updateInputSeason.bind(this);
   }
 
-  componentDidMount = async () => {
 
-    await api.getAllMovies().then(movies => {
-      this.setState({
-        movies: movies.data.data,
-      })
-    })
-  }
 
   postNewMovie(name, season) {
     const newMovie = {
@@ -56,10 +49,10 @@ class RecommendForm extends React.Component {
     <Accordion>
 
     <Card bsPrefix="movie">
-      <Card.Header bsPrefix="title-link">
+      <Card.Header bsPrefix="recommend-link">
         <Accordion.Toggle
           // onMouseOut={() => this.pauseVideo(movie._id)}
-          bsPrefix="title-link" as={Button} variant="link" eventKey="1">
+          bsPrefix="recommend-link" as={Button} variant="link" eventKey="1">
           recommend a movie
         </Accordion.Toggle>
       </Card.Header>

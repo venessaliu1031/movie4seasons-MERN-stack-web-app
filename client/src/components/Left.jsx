@@ -3,6 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import RecommendForm from "./RecommendForm";
+import CurrSeason from "./CurrSeason";
 import api from "../api"
 
 
@@ -16,38 +17,14 @@ class Left extends React.Component {
     this.state = {
       count: 0,
       movies: [],
-      season: ""
+      season: CurrSeason
     }
   }
 
   componentDidMount = async () => {
-    let currMonth = new Date().getMonth();
-    console.log("current month is " + currMonth);
-    let currSeason = ""
-    switch (true) {
-    case (currMonth <= 3):
-      currSeason = "winter";
-      break;
-    case (currMonth > 3 && currMonth <= 6):
-      currSeason = "spring";
-      break;
-    case (currMonth > 6 && currMonth <= 9):
-      currSeason = "summer";
 
-      break;
-    case (currMonth > 9):
-      currSeason = "fall";
 
-      break;
-    default:
-      currSeason = "all time"
-
-    }
-    this.setState({
-      season: currSeason
-    });
-
-    await api.getAllMovies(currSeason).then(movies => {
+    await api.getAllMovies(this.state.season).then(movies => {
       this.setState({
         movies: movies.data.data,
       })

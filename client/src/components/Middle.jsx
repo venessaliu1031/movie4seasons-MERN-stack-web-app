@@ -1,4 +1,5 @@
 import React from "react";
+import CurrSeason from "./CurrSeason";
 
 import api from "../api"
 
@@ -14,7 +15,8 @@ class Middle extends React.Component {
   }
 
   componentDidMount = async () => {
-    await api.getAllMovies().then(movies => {
+
+    await api.getAllMovies(CurrSeason).then(movies => {
       this.setState({
         movies: movies.data.data,
       })

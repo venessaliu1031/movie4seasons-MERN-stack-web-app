@@ -1,5 +1,5 @@
 import React from "react";
-
+import CurrSeason from "./CurrSeason";
 class Header extends React.Component {
 
   constructor(props) {
@@ -14,31 +14,9 @@ class Header extends React.Component {
       () => this.tick(),
       1000
     );
-    let currMonth = new Date().getMonth();
-    console.log("current month is " + currMonth);
-    let currSeason = ""
-    switch (true) {
-    case (currMonth <= 3):
-      currSeason = "winter";
-      break;
-    case (currMonth > 3 && currMonth <= 6):
-      currSeason = "spring";
-      break;
-    case (currMonth > 6 && currMonth <= 9):
-      currSeason = "summer";
 
-      break;
-    case (currMonth > 9):
-      currSeason = "fall";
-
-      break;
-    default:
-      currSeason = "all time"
-
-    }
-    console.log("current season is " + currSeason);
     this.setState({
-      season: currSeason
+      season: CurrSeason
     });
   }
   tick() {
