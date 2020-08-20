@@ -15,7 +15,7 @@ function Content(){
   return (
     <div className="row content-container">
       <Left/>
-      <div className="col-lg-8 col-sm-6 block-middle-right">
+      <div className="row col-lg-8 col-sm-6 block-middle-right">
         <div className="row block-upper-right">
           <Middle />
           <Right />

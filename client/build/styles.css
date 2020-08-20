@@ -77,6 +77,7 @@ p {
   overflow: scroll;
   float: left;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 .movie-image {
@@ -92,6 +93,7 @@ p {
   padding: 0;
   display: flex;
   flex-flow: column;
+  margin: 0;
 }
 
 a {
@@ -172,7 +174,7 @@ a:hover {
 }
 
 .block-upper-right {
-  height: 100%;
+  /* height: 100%; */
   overflow-y: hidden;
   width: inherit;
   margin: 0;
@@ -401,22 +403,48 @@ input {
 }
 
 @media only screen and (max-width: 575px) {
-
-  .block-middle-right {
-    height: auto;
+  .content-container {
+    display: flex;
+    flex-flow: column nowrap;
+    /* box-sizing: border-box; */
+    max-height: 100%;
   }
 
+  .block-middle-right {
+
+    display: flex;
+    flex-basis: 11em;
+
+
+    /* flex: 0 0 200px; */
+  }
 
   .block-upper-right {
     display: none;
   }
 
-    .block-left {
-      text-align: center;
-      height: calc(100vh - 200px);
-      border-right: none;
-    }
-    .info {
-      text-align: center;
-    }
+  .footer {
+    /* display: flex; */
+    position: fixed;
+    bottom: 0;
+  }
+
+  .block-left {
+    /* position: absolute; */
+    /* display: flex; */
+    width: 100%;
+    flex: 1;
+    /* height: auto; */
+
+
+    text-align: center;
+    /* height: calc(100vmax - 200px); */
+    border-right: none;
+    /* flex-grow: 1; */
+    overflow: auto;
+  }
+
+  .info {
+    text-align: center;
+  }
 }
