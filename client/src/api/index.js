@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 export const insertMovie = payload => api.post(`/movie`, payload)
-export const getAllMovies = payload => api.get(`/movies`, payload)
+export const getAllMovies = season => api.get(`/movies/${season}`)
 export const updateMovieById = (id, payload) => api.put(`/movie/${id}`, payload)
 export const deleteMovieById = id => api.delete(`/movie/${id}`)
 export const getMovieById = id => api.get(`/movie/${id}`)

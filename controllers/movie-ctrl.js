@@ -156,10 +156,10 @@ getMovieById = async (req, res) => {
 };
 
 getMovies = async (req, res) => {
-  const body = req.body
-  console.log(body);
+  const targetSeason = req.params.season
+  console.log(targetSeason);
 
-  await Movie.find(body, (err, movies) => {
+  await Movie.find({season: targetSeason, verification: true}, (err, movies) => {
     if (err) {
       return res.status(400).json({
         success: false,
