@@ -94,9 +94,9 @@ class RecommendForm extends React.Component {
         <button variant="primary" onClick={() => this.postNewMovie(this.state.inputName, this.state.inputSeason)} className="btn btn-dark">submit</button>
         <Modal show={this.state.show} onHide={this.closeModal}>
           <Modal.Header closeButton>
-            <Modal.Title>✧( ु•⌄• )◞◟( •⌄• ू )✧</Modal.Title>
+            <Modal.Title>( ´͈ ᵕ `͈ )◞♡</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Hooray! Your recommendation has been delivered to Venessa. She will check her database one a while (hopefully) and update the list with some of the best recommendations.</Modal.Body>
+          <Modal.Body>Hooray! Your recommendation has been delivered to Venessa. She will check her database once in a while (hopefully) and update the list with some of the best recommendations.</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.closeModal}>
               Close
