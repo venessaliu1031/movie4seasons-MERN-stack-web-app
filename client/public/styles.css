@@ -32,7 +32,7 @@ p {
   position: fixed;
   display: flex;
   text-align: center;
-  padding: 0;
+  padding: 0 10px;
   margin: 0;
   border-bottom: 1px solid black;
   background-color: inherit;
@@ -54,7 +54,7 @@ p {
 
 .curr-time {
   position: absolute;
-  right: 0;
+  right: 1em;
 }
 
 
@@ -70,7 +70,7 @@ p {
 
 /* movie titles */
 .block-left {
-  padding: 10px 10px 20px 30px;
+  padding: 10px;
   text-align: right;
   height: inherit;
   border-right: 1px solid black;
@@ -115,6 +115,8 @@ a:hover {
   text-decoration: none;
   background-color: inherit;
   border: none;
+  text-align: right;
+  text-shadow: 4px 4px 0px rgba(196, 189, 172, .3);
 }
 
 
@@ -130,6 +132,8 @@ a:hover {
 }
 
 .recommend-link {
+  text-shadow: 4px 4px 0px rgba(196, 189, 172, .3);
+  text-align: right;
   word-wrap: break-word;
   font-size: 2.5rem;
   color: black;
@@ -192,9 +196,9 @@ a:hover {
 
 
 /* screen */
-.col {
+/* .col {
   padding: 0;
-}
+} */
 
 .block-upper-right {
   /* height: 100%; */
@@ -465,6 +469,14 @@ input {
     border-right: none;
     /* flex-grow: 1; */
     overflow: auto;
+  }
+
+  .title-link {
+    text-align: center;
+  }
+
+  .recommend-link {
+    text-align: center;
   }
 
   .info {
