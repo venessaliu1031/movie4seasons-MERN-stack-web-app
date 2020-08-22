@@ -14,9 +14,9 @@ function Footer() {
 
   return (
     <div className="row footer">
-      <div className="col-6 col-md-4 col-sm-12 newsletter">
+      <div className="col-12 col-md-4 col-sm-12 newsletter">
         <p>newsletter</p>
-        <div id="signin-form" className="newsletter-signin flexbox">
+        <div id="signin-form" className="newsletter-signin">
           <input id="email-input" type="email" name="email" placeholder="email"></input>
           <button className="button" onClick={signin}>→</button>
         </div>

@@ -304,8 +304,14 @@ video {
 }
 
 .newsletter {
-  padding: 0 10px;
+  padding: 0 10px 5px 10px;
   width: 50%;
+
+}
+
+.newsletter p {
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 
@@ -318,19 +324,15 @@ input {
   background-color: transparent;
   border: none;
   overflow: hidden;
+  width: 100%;
 }
 
 .newsletter-signin {
   position: relative;
   border-bottom: 1px solid black;
-  margin: 10px 0;
-}
+  display: flex;
 
-.flexbox { display: flex; }
-.flexbox .stretch { flex: 1; }
-.flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
-.flexbox input { width: 100%; }
-.flexbox button { white-space: nowrap; }
+}
 
 
 
@@ -340,6 +342,7 @@ input {
   border: none;
   background-color: inherit;
   float: right;
+  white-space: nowrap;
 }
 .button:hover {
   color: black;
@@ -426,6 +429,19 @@ input {
     }
 
 }
+
+@media only screen and (max-width: 767px) {
+  .newsletter {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+  }
+  .newsletter p {
+    padding-bottom: 0;
+  }
+}
+
+
 
 @media only screen and (max-width: 575px) {
   .content-container {
