@@ -17,16 +17,17 @@ class Left extends React.Component {
     this.state = {
       count: 0,
       movies: [],
-      season: CurrSeason
+      season: CurrSeason()
     }
   }
 
   componentDidMount = async () => {
 
 
+
     await api.getAllMovies(this.state.season).then(movies => {
       this.setState({
-        movies: movies.data.data,
+        movies: movies.data.data
       })
     })
   }
@@ -76,7 +77,7 @@ class Left extends React.Component {
 
 
     var movieSection = movies.map(function(movie, index){
-      let imagePath = "images/" + index + ".png";
+      let imagePath = "images/" + this.state.season + "/" + index + ".png";
       return (
         <Accordion key={index}>
 

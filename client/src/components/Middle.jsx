@@ -6,19 +6,21 @@ import api from "../api"
 
 class Middle extends React.Component {
 
+
   constructor(props) {
     super(props);
     this.state = {
       movies: [],
+      season: CurrSeason()
     }
     this.endVideo = this.endVideo.bind(this)
   }
 
   componentDidMount = async () => {
 
-    await api.getAllMovies(CurrSeason).then(movies => {
+    await api.getAllMovies(this.state.season).then(movies => {
       this.setState({
-        movies: movies.data.data,
+        movies: movies.data.data
       })
     })
   }
@@ -33,7 +35,7 @@ class Middle extends React.Component {
 
     var screenSection = movies.map(function(movie, index){
 
-      const path = `/videos/${index}.mp4`
+      const path = "/videos/" + this.state.season + "/" + index + ".mp4"
       return (
 
           <div className="video" key={index}>

@@ -1,25 +1,31 @@
 
 
-let currMonth = new Date().getMonth();
-let CurrSeason = ""
-switch (true) {
-case (currMonth <= 3):
-  CurrSeason = "winter";
-  break;
-case (currMonth > 3 && currMonth <= 6):
-  CurrSeason = "spring";
-  break;
-case (currMonth > 6 && currMonth <= 9):
-  CurrSeason = "summer";
 
-  break;
-case (currMonth > 9):
-  CurrSeason = "fall";
+function CurrSeason() {
+  let currMonth = new Date().getMonth();
+  let currSeason = ""
+  switch (true) {
+  case (currMonth === 11 || currMonth < 2):
+    currSeason = "winter";
+    break;
+  case (currMonth >= 2 && currMonth < 5):
+    currSeason = "spring";
+    break;
+  case (currMonth >= 5 && currMonth < 8):
+    currSeason = "summer";
 
-  break;
-default:
-  CurrSeason = "all time"
+    break;
+  case (currMonth >= 8 && currMonth < 11):
+    currSeason = "autumn";
 
+    break;
+  default:
+    currSeason = "all time"
+
+  }
+
+  return currSeason;
 }
+
 
 export default CurrSeason;
