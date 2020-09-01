@@ -109,7 +109,6 @@ a:hover {
 }
 
 .title-link {
-  word-wrap: break-word;
   font-size: 2.5rem;
   color: black;
   text-decoration: none;
@@ -117,6 +116,8 @@ a:hover {
   border: none;
   text-align: right;
   text-shadow: 4px 4px 0px rgba(196, 189, 172, .3);
+  line-height: 1.15em;
+  padding: 0.15em 0;
 }
 
 
@@ -134,13 +135,13 @@ a:hover {
 .recommend-link {
   text-shadow: 4px 4px 0px rgba(196, 189, 172, .3);
   text-align: right;
-  word-wrap: break-word;
   font-size: 2.5rem;
   color: black;
-  text-decoration: none;
   background-color: inherit;
   border: none;
   text-decoration: black dotted underline;
+  line-height: 1.15em;
+  padding: 0.15em 0;
 
 }
 
@@ -303,8 +304,14 @@ video {
 }
 
 .newsletter {
-  padding: 0 10px;
+  padding: 0 10px 5px 10px;
   width: 50%;
+
+}
+
+.newsletter p {
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 
@@ -317,19 +324,15 @@ input {
   background-color: transparent;
   border: none;
   overflow: hidden;
+  width: 100%;
 }
 
 .newsletter-signin {
   position: relative;
   border-bottom: 1px solid black;
-  margin: 10px 0;
-}
+  display: flex;
 
-.flexbox { display: flex; }
-.flexbox .stretch { flex: 1; }
-.flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
-.flexbox input { width: 100%; }
-.flexbox button { white-space: nowrap; }
+}
 
 
 
@@ -339,6 +342,7 @@ input {
   border: none;
   background-color: inherit;
   float: right;
+  white-space: nowrap;
 }
 .button:hover {
   color: black;
@@ -423,11 +427,21 @@ input {
       height: 35vw;
       overflow-y: scroll;
     }
-    .block-left {
-      text-align: center;
-    }
 
 }
+
+@media only screen and (max-width: 767px) {
+  .newsletter {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+  }
+  .newsletter p {
+    padding-bottom: 0;
+  }
+}
+
+
 
 @media only screen and (max-width: 575px) {
   .content-container {
@@ -440,7 +454,7 @@ input {
   .block-middle-right {
 
     display: flex;
-    flex-basis: 11em;
+    flex-basis: 8em;
 
 
     /* flex: 0 0 200px; */
