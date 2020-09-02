@@ -56,9 +56,9 @@ class Middle extends React.Component {
 
 
       <div id="scene">
-        <img className="image1" data-depth="0.9" src="images/green.png" alt=""></img>
-        <img className="image2" data-depth="0.7" src="images/fish-can.png" alt=""></img>
-        <img className="image3" data-depth="0.5" src="images/bird.png" alt=""></img>
+        <img className="image1" data-depth="0.9" src="https://film4seasons.s3.us-east-2.amazonaws.com/images/green.png" alt=""></img>
+        <img className="image2" data-depth="0.7" src="https://film4seasons.s3.us-east-2.amazonaws.com/images/fish-can.png" alt=""></img>
+        <img className="image3" data-depth="0.5" src="https://film4seasons.s3.us-east-2.amazonaws.com/images/bird.png" alt=""></img>
 
       </div>
 
