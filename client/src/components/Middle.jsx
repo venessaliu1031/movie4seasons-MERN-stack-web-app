@@ -35,7 +35,7 @@ class Middle extends React.Component {
 
     var screenSection = movies.map(function(movie, index){
 
-      const path = "/videos/" + this.state.season + "/" + index + ".mp4"
+      const path = "https://film4seasons.s3.us-east-2.amazonaws.com/videos/" + this.state.season + "/" + index + ".mp4"
       return (
 
           <div className="video" key={index}>

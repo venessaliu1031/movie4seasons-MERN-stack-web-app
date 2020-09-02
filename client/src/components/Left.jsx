@@ -77,7 +77,7 @@ class Left extends React.Component {
 
 
     var movieSection = movies.map(function(movie, index){
-      let imagePath = "images/" + this.state.season + "/" + index + ".png";
+      let imagePath = "https://film4seasons.s3.us-east-2.amazonaws.com/images/" + this.state.season + "/" + index + ".png";
       return (
         <Accordion key={index}>
 
